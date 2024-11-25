@@ -4,6 +4,8 @@ import fr.apside.demo.exerciceSpring.entity.Invoice;
 import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
 import fr.apside.demo.exerciceSpring.service.InvoiceServiceInterface;
 
+import java.util.List;
+
 //@Service
 public class InvoiceNumberService implements InvoiceServiceInterface {
 
@@ -21,5 +23,10 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
 	public void createInvoice(Invoice invoice) {
 		invoice.setNumber(String.valueOf(++lastNumber));
 		invoiceRepositoryInterface.create(invoice);
+	}
+
+	@Override
+	public List<Invoice> getInvoiceList() {
+		return invoiceRepositoryInterface.lit();
 	}
 }

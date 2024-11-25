@@ -4,6 +4,10 @@ import fr.apside.demo.exerciceSpring.controller.InvoiceControllerInterface;
 import fr.apside.demo.exerciceSpring.entity.Invoice;
 import fr.apside.demo.exerciceSpring.service.InvoiceServiceInterface;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 // @Component indique que c'est une composant de l'application. Ici on utilise l'annotation fille :
 @Controller// On par de stereotype
@@ -28,5 +32,27 @@ public class InvoiceWebController implements InvoiceControllerInterface {
 		invoice.setCustomerName(customerName);
 
 		invoiceServiceInterface.createInvoice(invoice);
+	}
+
+	/*
+	Une méthode, mais peu courante :
+	@RequestMapping("/invoice-home")
+	public String displayHome(HttpServletRequest request) {
+		System.out.println("La méthode display Home a été invoquée");
+		List<Invoice> invoices = invoiceServiceInterface.getInvoiceList();
+		request.setAttribute("invoices", invoices);
+		return "index";
+	}
+	 */
+
+
+	//Une autre méthode :
+	//Si je laisse comme ça je suis obligé d'avoir invoice-home comme nom de fichier html. et
+	// Plus proche des standards actuels
+	@RequestMapping("/invoice-home")
+	public @ModelAttribute("invoices") List<Invoice> displayHome() {
+		System.out.println("La méthode display Home a été invoquée");
+		List<Invoice> invoices = invoiceServiceInterface.getInvoiceList();
+		return invoices;
 	}
 }

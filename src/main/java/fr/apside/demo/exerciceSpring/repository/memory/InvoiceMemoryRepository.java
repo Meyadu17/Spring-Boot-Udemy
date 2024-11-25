@@ -18,4 +18,10 @@ public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
 		invoices.add(invoice);
 		System.out.println("Memory : Invoice added with number " + invoice.getNumber() + " for" + invoice.getCustomerName());
 	}
+
+	@Override
+	public List<Invoice> lit() {
+
+		throw new UnsupportedOperationException();
+	}
 }

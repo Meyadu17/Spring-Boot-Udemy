@@ -1,10 +1,12 @@
 package fr.apside.demo.exerciceSpring.service;
 
 import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
+
+import java.util.List;
 
 public interface InvoiceServiceInterface {
 
 	void createInvoice(Invoice invoice);
+	List<Invoice> getInvoiceList();
 
 }
