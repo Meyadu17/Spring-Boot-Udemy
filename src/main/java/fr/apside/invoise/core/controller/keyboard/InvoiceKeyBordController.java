@@ -19,16 +19,17 @@ public class InvoiceKeyBordController implements InvoiceControllerInterface {
 		this.invoiceService = invoiceService;
 	}
 
-	public void createInvoice () {
+	public String createInvoice (Invoice invoice) {
 
 		System.out.println( "What is customer name?" );
 		Scanner scanner = new Scanner(System.in);
 		String customerName = scanner.nextLine();
 
-		Invoice invoice = new Invoice();
+		invoice = new Invoice();
 		invoice.setCustomerName(customerName);
 
-
 		invoiceService.createInvoice(invoice);
+
+		return null;
 	}
 }

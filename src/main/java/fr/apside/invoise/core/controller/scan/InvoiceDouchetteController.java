@@ -14,11 +14,12 @@ public class InvoiceDouchetteController implements InvoiceControllerInterface {
 	}
 
 	@Override
-	public void createInvoice() {
-		// de fausses données en dur pour simuler ce que récupère une scanner de code barre de notre exemple
+	public String createInvoice(Invoice invoice) {
+		// de fausses données en dur pour simuler ce que récupère un scanner de code barre de notre exemple
 		System.out.println("Usage of a scanner");
-		Invoice invoice = new Invoice();
+		invoice = new Invoice();
 		invoice.setCustomerName("Virgin Galactic");
 		invoiceService.createInvoice(invoice);
+		return null;
 	}
 }
