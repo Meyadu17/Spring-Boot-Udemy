@@ -10,5 +10,5 @@ public interface InvoiceRepositoryInterface {
 
 	List<Invoice> list();
 
-
+	Invoice getById(String number);
 }
