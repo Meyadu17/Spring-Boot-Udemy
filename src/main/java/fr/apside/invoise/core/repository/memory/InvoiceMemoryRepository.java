@@ -1,7 +1,7 @@
-package fr.apside.demo.exerciceSpring.repository.memory;
+package fr.apside.invoise.core.repository.memory;
 
-import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
+import fr.apside.invoise.core.entity.Invoice;
+import fr.apside.invoise.core.repository.InvoiceRepositoryInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
 	}
 
 	@Override
-	public List<Invoice> lit() {
+	public List<Invoice> list() {
 
 		throw new UnsupportedOperationException();
 	}

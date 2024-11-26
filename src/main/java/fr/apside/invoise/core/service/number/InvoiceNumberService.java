@@ -1,8 +1,8 @@
-package fr.apside.demo.exerciceSpring.service.number;
+package fr.apside.invoise.core.service.number;
 
-import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
-import fr.apside.demo.exerciceSpring.service.InvoiceServiceInterface;
+import fr.apside.invoise.core.entity.Invoice;
+import fr.apside.invoise.core.repository.InvoiceRepositoryInterface;
+import fr.apside.invoise.core.service.InvoiceServiceInterface;
 
 import java.util.List;
 
@@ -27,6 +27,6 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
 
 	@Override
 	public List<Invoice> getInvoiceList() {
-		return invoiceRepositoryInterface.lit();
+		return invoiceRepositoryInterface.list();
 	}
 }

@@ -1,4 +1,4 @@
-package fr.apside.demo.exerciceSpring.entity;
+package fr.apside.invoise.core.entity;
 
 public class Invoice {
 	private String number;

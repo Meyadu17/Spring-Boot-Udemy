@@ -1,6 +1,6 @@
-package fr.apside.demo.exerciceSpring.service;
+package fr.apside.invoise.core.service;
 
-import fr.apside.demo.exerciceSpring.entity.Invoice;
+import fr.apside.invoise.core.entity.Invoice;
 
 import java.util.List;
 

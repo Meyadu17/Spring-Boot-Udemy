@@ -1,8 +1,8 @@
-package fr.apside.demo.exerciceSpring.service.prefix;
+package fr.apside.invoise.core.service.prefix;
 
-import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
-import fr.apside.demo.exerciceSpring.service.InvoiceServiceInterface;
+import fr.apside.invoise.core.entity.Invoice;
+import fr.apside.invoise.core.repository.InvoiceRepositoryInterface;
+import fr.apside.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +34,6 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
 
 	@Override
 	public List<Invoice> getInvoiceList() {
-		return invoiceRepositoryInterface.lit();
+		return invoiceRepositoryInterface.list();
 	}
 }

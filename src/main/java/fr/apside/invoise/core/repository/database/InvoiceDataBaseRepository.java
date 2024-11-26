@@ -1,7 +1,7 @@
-package fr.apside.demo.exerciceSpring.repository.database;
+package fr.apside.invoise.core.repository.database;
 
-import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.repository.InvoiceRepositoryInterface;
+import fr.apside.invoise.core.entity.Invoice;
+import fr.apside.invoise.core.repository.InvoiceRepositoryInterface;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class InvoiceDataBaseRepository implements InvoiceRepositoryInterface {
 	}
 
 	@Override
-	public List<Invoice> lit() {
+	public List<Invoice> list() {
 
 		Invoice invoice1 = new Invoice();
 		invoice1.setNumber("NUM_1");
@@ -32,7 +32,7 @@ public class InvoiceDataBaseRepository implements InvoiceRepositoryInterface {
 		invoice2.setNumber("NUM_2");
 		invoice2.setCustomerName("La poste");
 
-		return List.of(invoice1,invoice2);
+		return List.of(invoice1, invoice2);
 	}
 
 }

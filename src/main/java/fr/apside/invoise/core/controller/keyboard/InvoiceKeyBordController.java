@@ -1,8 +1,8 @@
-package fr.apside.demo.exerciceSpring.controller.keyboard;
+package fr.apside.invoise.core.controller.keyboard;
 
-import fr.apside.demo.exerciceSpring.controller.InvoiceControllerInterface;
-import fr.apside.demo.exerciceSpring.entity.Invoice;
-import fr.apside.demo.exerciceSpring.service.InvoiceServiceInterface;
+import fr.apside.invoise.core.controller.InvoiceControllerInterface;
+import fr.apside.invoise.core.entity.Invoice;
+import fr.apside.invoise.core.service.InvoiceServiceInterface;
 
 import java.util.Scanner;
 
