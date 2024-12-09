@@ -2,7 +2,6 @@ package fr.apside.invoise.core.repository.database;
 
 import fr.apside.invoise.core.entity.Invoice;
 import fr.apside.invoise.core.repository.InvoiceRepositoryInterface;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * pARTIE mOD7LE DU mvc
  */
 // Même chose que pour @Controller et @Service, (il y a juste de légères différences cf : InvoiceControllerWeb
-@Repository
+//@Repository
 public class InvoiceDataBaseRepository implements InvoiceRepositoryInterface {
 
 	public void create(Invoice invoice){
@@ -28,9 +27,14 @@ public class InvoiceDataBaseRepository implements InvoiceRepositoryInterface {
 		Invoice invoice1 = new Invoice();
 		invoice1.setNumber("NUM_1");
 		invoice1.setCustomerName("EDF");
+
 		Invoice invoice2 = new Invoice();
 		invoice2.setNumber("NUM_2");
 		invoice2.setCustomerName("La poste");
+
+		Invoice invoice3 = new Invoice();
+		invoice3.setNumber("NUM_3");
+		invoice3.setCustomerName("Apside");
 
 		return List.of(invoice1, invoice2);
 	}
@@ -38,13 +42,16 @@ public class InvoiceDataBaseRepository implements InvoiceRepositoryInterface {
 	@Override
 	public Invoice getById(String number) {
 
-		// Mock des données
-		Invoice invoice1 = new Invoice();
-		invoice1.setNumber(number);
-		invoice1.setCustomerName("EDF");
-		invoice1.setOrderNumber("ON_002");
+		List<Invoice> invoiceList = list();
 
-		return invoice1;
+		for (Invoice invoice : invoiceList) {
+			if (invoice.getNumber().equals(number)) {
+				return invoice;
+			}
+		}
+
+		return null;
+
 	}
 
 }
